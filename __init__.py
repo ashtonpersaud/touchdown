@@ -16,7 +16,6 @@ class touchdownSkill(MycroftSkill):
 
     @intent_handler('touchdown.intent')
     def handle_not_are_you_intent(self, message):
-        self.speak_dialog("Touch down by the knights")
         serA = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
         serA.flush()
         serA.write(b"touch")
@@ -29,6 +28,7 @@ class touchdownSkill(MycroftSkill):
         serD = serial.Serial('/dev/ttyACM3', 9600, timeout=1)
         serD.flush()
         serD.write(b"touch") 
+        self.speak_dialog("Touch down by the knights")
 
     def stop(self):
         pass
