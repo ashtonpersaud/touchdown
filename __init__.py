@@ -25,9 +25,9 @@ class touchdownSkill(MycroftSkill):
         serC = serial.Serial('/dev/ttyACM2', 9600, timeout=1)
         serC.flush()
         serC.write(b"touch")
-        serD = serial.Serial('/dev/ttyACM3', 9600, timeout=1)
-        serD.flush()
-        serD.write(b"touch") 
+        #serD = serial.Serial('/dev/ttyACM3', 9600, timeout=1)
+        #serD.flush()
+        #serD.write(b"touch") 
         time.sleep(1.5)
         self.speak_dialog("Touch down by the knights")
 
